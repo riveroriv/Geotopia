@@ -5,6 +5,7 @@
 
 [node name="Player" type="KinematicBody2D"]
 scale = Vector2( 0.6, 0.6 )
+z_index = 10
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -21,3 +22,10 @@ polygon = PoolVector2Array( -74, 46, -2, -29, 73, 45 )
 current = true
 smoothing_enabled = true
 smoothing_speed = 10.0
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PoolVector2Array( -35, -71.6667, -35, 75, 38.3333, 0 )

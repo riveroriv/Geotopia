@@ -35,12 +35,12 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	#	state_machine.travel("idle")
 		
-	if Input.is_action_just_pressed("attack"):
-		pass
+	#if Input.is_action_just_pressed("attack"):
+	#	pass
 	#	state_machine.travel("hurt")
 		
-	if Input.is_action_just_pressed("dash"):
-		pass
+	#if Input.is_action_just_pressed("dash"):
+	#	pass
 	#	state_machine.travel("hurt")
 	#if Input.is_action_just_pressed("roll"):
 	#	state_machine.travel("roll")
