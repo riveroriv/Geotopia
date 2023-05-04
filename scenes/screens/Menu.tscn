@@ -1,7 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/Reywak.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/screens/Menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/backgrounds/menu/capa_0.png" type="Texture" id=4]
+[ext_resource path="res://assets/backgrounds/menu/capa_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/backgrounds/menu/capa_2.png" type="Texture" id=6]
+[ext_resource path="res://styles/Pause_buttom.tres" type="StyleBox" id=7]
+[ext_resource path="res://styles/Pause_buttom_hover.tres" type="StyleBox" id=8]
+[ext_resource path="res://styles/button_theme.tres" type="Theme" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 200
@@ -12,28 +19,75 @@ default_font = SubResource( 1 )
 
 [node name="Menu" type="Node2D"]
 pause_mode = 2
+position = Vector2( 2, 5 )
 script = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
-
-[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 148.0
-margin_top = 135.0
-margin_right = 959.0
-margin_bottom = 335.0
-theme = SubResource( 2 )
-text = "Geotopia"
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.2, 0.2 )
 
-[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer2"]
-margin_left = 318.0
-margin_top = 270.0
-margin_right = 1129.0
-margin_bottom = 470.0
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer0"]
+position = Vector2( 545, 280 )
+scale = Vector2( 0.330533, 0.34058 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer1"]
+position = Vector2( 449, 272 )
+scale = Vector2( 0.400325, 0.400325 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 611, 298 )
+scale = Vector2( 0.317911, 0.311953 )
+texture = ExtResource( 6 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -510.0
+margin_top = -292.0
+margin_right = 511.0
+margin_bottom = 299.0
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 103.0
+margin_top = 43.0
+margin_right = 914.0
+margin_bottom = 243.0
 theme = SubResource( 2 )
 text = "Geotopia"
+
+[node name="Jugar" type="Button" parent="Control"]
+margin_left = 393.0
+margin_top = 423.0
+margin_right = 614.0
+margin_bottom = 489.0
+theme = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
+text = "Jugar"
+
+[node name="Salir" type="Button" parent="Control"]
+margin_left = 393.0
+margin_top = 506.0
+margin_right = 613.0
+margin_bottom = 571.0
+theme = ExtResource( 9 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/normal = ExtResource( 7 )
+text = "Salir"
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3, -1.00003 )
+
+[connection signal="pressed" from="Control/Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="Control/Salir" to="." method="_on_Salir_pressed"]
