@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player.png-e230e05e2d932a710303ee07f401e40f.stex"
+path="res://.import/squeare.png-0a29d4b09b1ec24252935f1603712886.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player.png"
-dest_files=[ "res://.import/player.png-e230e05e2d932a710303ee07f401e40f.stex" ]
+source_file="res://assets/characters/squeare.png"
+dest_files=[ "res://.import/squeare.png-0a29d4b09b1ec24252935f1603712886.stex" ]
 
 [params]
 

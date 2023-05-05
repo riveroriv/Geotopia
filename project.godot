@@ -17,7 +17,7 @@ config/icon="res://icon.png"
 [display]
 
 window/size/resizable=false
-mouse_cursor/custom_image="res://assets/mouse/mouse.png"
+mouse_cursor/custom_image="res://assets/small/mouse.png"
 mouse_cursor/custom_image_hotspot=Vector2( 20, 20 )
 
 [gui]
@@ -71,6 +71,7 @@ attack={
 2d_physics/layer_4="player_hit"
 2d_physics/layer_5="enemy_hurt"
 2d_physics/layer_6="enemy_hit"
+2d_physics/layer_7="walls"
 
 [physics]
 

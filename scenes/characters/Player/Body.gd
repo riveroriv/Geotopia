@@ -12,14 +12,10 @@ var velocity = Vector2.ZERO
 var hurt = false
 var on_damage = false
 
-var bullet_list = []
-
-
 
 func _physics_process(delta):
 	var mouse_pos = get_global_mouse_position()
-	var direction = mouse_pos - position
-	direction = direction.normalized()
+	var direction = (mouse_pos - position).normalized()
 	var angle = direction.angle()
 	rotation = angle
 	
@@ -47,8 +43,11 @@ func _physics_process(delta):
 
 		
 	velocity = move_and_slide(velocity)
-
-
+	
 
 func _ready():
 	pass
+
+
+func _on_Hurtbox_area_entered(_area):
+	print("ouch")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/capa_1.png-13623d46d41b14aa08d3e6c431322580.stex"
+path="res://.import/mouse.png-ac8758c27488fee4a5d302d4cbff07f9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/menu/capa_1.png"
-dest_files=[ "res://.import/capa_1.png-13623d46d41b14aa08d3e6c431322580.stex" ]
+source_file="res://assets/small/mouse.png"
+dest_files=[ "res://.import/mouse.png-ac8758c27488fee4a5d302d4cbff07f9.stex" ]
 
 [params]
 
