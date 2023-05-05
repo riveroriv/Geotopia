@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/characters/squeare.png" type="Texture" id=1]
 [ext_resource path="res://scenes/characters/enemies/Square.gd" type="Script" id=2]
+[ext_resource path="res://scenes/characters/enemies/BodySquare.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51.8544, 51.8545 )
@@ -14,6 +15,7 @@ script = ExtResource( 2 )
 
 [node name="Body" type="KinematicBody2D" parent="."]
 scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Body"]
 scale = Vector2( 0.231, 0.231 )
@@ -33,4 +35,15 @@ position = Vector2( 6.95387e-07, 1.98682e-06 )
 rotation = 0.785397
 shape = SubResource( 2 )
 
+[node name="Timer" type="Timer" parent="Body"]
+one_shot = true
+autostart = true
+
 [node name="Attacks" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Body/Timer" to="Body" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

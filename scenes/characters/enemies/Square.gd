@@ -11,8 +11,14 @@ func _physics_process(delta):
 	#	$Player.position = -$Player.position
 		
 func shoot():
-	for i in range(8):
+	for i in range(4):
 		var bullet = preload("res://scenes/attacks/Bullet_square.tscn").instance()
-		bullet.shoot($Body.position, $Body.rotation + deg2rad(45*i))
+		bullet.shoot($Body.position, $Body.rotation + deg2rad(90*i))
 		$Attacks.add_child(bullet)
 
+
+
+func _on_Timer_timeout():
+	shoot()
+	var duration = rand_range(1, 4)
+	$Timer.start(duration)

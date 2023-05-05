@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-const _speed = 1000
+const SPEED = 1000
 export var angle = 0
-var speed = _speed
+var speed = SPEED
 var motion = Vector2.ZERO
 
 func _ready():
@@ -16,7 +16,7 @@ func _physics_process(_delta):
 	motion = move_and_slide(motion)
 
 func shoot(new_position, new_angle):
-	speed = _speed
+	speed = SPEED
 	position = new_position
 	angle = new_angle
 	show()
