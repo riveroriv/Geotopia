@@ -17,11 +17,13 @@ func change_scene(scene_path):
 	current_scene = next_scene
 	
 func _input(event):
-	if event.is_action_pressed("pause"):
-		is_paused = !is_paused
-		if is_paused:
-			get_tree().paused = true # Pause the entire scene tree
-			$Pause.show() # Show the pause screen
-		else:
-			# The game is already unpaused, so do nothing
-			pass
+	pass
+	
+#	if event.is_action_pressed("pause"):
+#		is_paused = !is_paused
+#		if is_paused:
+#			get_tree().paused = true # Pause the entire scene tree
+#			$Pause.show() # Show the pause screen
+#		else:
+#			# The game is already unpaused, so do nothing
+#			pass

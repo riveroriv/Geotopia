@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/tilesets/tileset_pallete.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/characters/enemies/Circle.tscn" type="PackedScene" id=2]
 
 [node name="Map" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
+cell_size = Vector2( 100, 100 )
+collision_layer = 65
 format = 1
+tile_data = PoolIntArray( -458753, 0, 0, -524288, 0, 0, -393217, 0, 0, -458752, 0, 0, -196614, 4, 0, -196613, 4, 0, -196609, 4, 0, -262144, 4, 0, -131078, 4, 0, -131077, 4, 0, -131073, 4, 0, -196608, 4, 0, 65530, 0, 0, 65531, 0, 0, 65535, 3, 0, 0, 3, 0, 3, 2, 0, 4, 2, 0, 131066, 0, 0, 131067, 0, 0, 131071, 3, 0, 65536, 3, 0, 65539, 2, 0, 65540, 2, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 483, -217 )
