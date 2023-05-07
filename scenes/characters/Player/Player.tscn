@@ -35,6 +35,7 @@ polygon = PoolVector2Array( -74, 46, -2, -29, 73, 45 )
 
 [node name="Camera2D" type="Camera2D" parent="Body"]
 current = true
+zoom = Vector2( 1.1, 1.1 )
 smoothing_enabled = true
 smoothing_speed = 10.0
 
