@@ -16,7 +16,8 @@ func shoot():
 
 
 func _on_Timer_timeout():
-	shoot()
+	if $Body.attack:
+		shoot()
 	var duration = rand_range(2, 4)
 	$Timer.start(duration)
 

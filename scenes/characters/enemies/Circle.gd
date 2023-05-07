@@ -19,7 +19,7 @@ func _on_Timer_timeout():
 	var duration = 1
 	if $Body.attack:
 		shoot()
-		duration = rand_range(2, 3)
+		duration = rand_range(3, 5)
 		
 	$Timer.start(duration)
 

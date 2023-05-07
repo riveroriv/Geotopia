@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass
+	$Player.visible_label(false)
 		
 func _physics_process(delta):
 	pass
