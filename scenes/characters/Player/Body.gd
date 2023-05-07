@@ -33,4 +33,3 @@ func _ready():
 
 func _on_Hurtbox_area_entered(_area):
 	position = Vector2.ZERO
-	print("ouch")

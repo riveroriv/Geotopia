@@ -11,9 +11,9 @@ func _physics_process(delta):
 		queue_free()
 
 func shoot():
-	for i in range(36):
+	for i in range(18):
 		var bullet = preload("res://scenes/attacks/Bullet_circle.tscn").instance()
-		bullet.shoot($Body.position, deg2rad(10*i))
+		bullet.shoot($Body.position, deg2rad(20*i))
 		$Attacks.add_child(bullet)
 
 

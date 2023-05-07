@@ -20,7 +20,6 @@ func _ready():
 	$Navigation2D.add_child(map)
 		
 func _process(delta):
-	print($Navigation2D/Map/Enemies.get_child_count())
 	if $Navigation2D/Map/Enemies.get_child_count() == 0:
 		end_level()
 
