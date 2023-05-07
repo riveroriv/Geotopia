@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fonts/Reywak.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/characters/Player/Player.tscn" type="PackedScene" id=2]
@@ -14,6 +14,12 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 999.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.75, 601.75 )
 
 [node name="Menu" type="Node2D"]
 pause_mode = 2
@@ -95,6 +101,32 @@ text = "Salir"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 3, -1.00003 )
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="HW1" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/HW1"]
+position = Vector2( -6, -501 )
+shape = SubResource( 3 )
+
+[node name="HW2" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/HW2"]
+position = Vector2( 5, 709 )
+shape = SubResource( 3 )
+
+[node name="VW1" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/VW1"]
+position = Vector2( -1009, 103 )
+shape = SubResource( 4 )
+
+[node name="VW2" type="StaticBody2D" parent="Limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/VW2"]
+position = Vector2( 982, 100 )
+shape = SubResource( 4 )
 
 [connection signal="pressed" from="Control/Jugar" to="." method="_on_Jugar_pressed"]
 [connection signal="pressed" from="Control/Salir" to="." method="_on_Salir_pressed"]

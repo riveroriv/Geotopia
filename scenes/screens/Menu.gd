@@ -3,6 +3,8 @@ extends Node2D
 
 func _ready():
 	$Player.visible_label(false)
+	$Player/Body/Camera2D.zoom.x = 1
+	$Player/Body/Camera2D.zoom.y = 1
 		
 func _physics_process(delta):
 	pass
