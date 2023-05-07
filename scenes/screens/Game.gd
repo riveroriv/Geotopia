@@ -5,4 +5,4 @@ func _ready():
 	pass
 		
 func _physics_process(delta):
-	pass
+	print($Navigation2D/Map/Enemies.get_child_count())

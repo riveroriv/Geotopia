@@ -72,6 +72,7 @@ attack={
 2d_physics/layer_5="enemy_hurt"
 2d_physics/layer_6="enemy_hit"
 2d_physics/layer_7="walls"
+2d_physics/layer_8="checkpoints"
 
 [physics]
 
